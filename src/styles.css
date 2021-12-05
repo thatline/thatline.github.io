@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    * {
+        font-family: 'Playfair Display', serif;
+    }
+
+    body {
+        @apply p-8 text-center text-white;
+        background: #1B1C1E;
+    }
+
+    section { 
+        @apply my-16;
+    }
+
+    header {
+        @apply top-4;
+    }
+
+    nav {
+        @apply flex justify-between;
+    }
+}
+
+@layer components {
+    .thatline-logo {
+        @apply font-black;
+        font-size: 1.25rem;
+        letter-spacing: -0.1em;
+    }
+
+    .line {
+        @apply font-bold mb-4;
+        font-size: 7rem;
+        font-style: italic;
+        line-height: 9.25rem;
+    }
+
+    .info {
+        @apply flex flex-col mt-16;
+    }
+
+    .info :hover {
+        @apply underline;
+    }
+
+    .title {
+        @apply font-bold text-lg;
+    }
+
+    .artists { 
+        @apply opacity-80;
+    }
+
+    .next-btn {
+        @apply rounded-lg bg-white px-8 py-4 font-black text-2xl;
+        color: #1B1C1E;
+    }
+}

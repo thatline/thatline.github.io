@@ -1,0 +1,28 @@
+<!DOCTYPE html><html lang="en"><head><link href="/dist/tailwind.css" rel="stylesheet"><script src="./scripts/lines.js"></script><script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet"></head><body><header><nav><div class="thatline-logo">That~~~Line</div><div class="github-logo"><a href="https://github.com/thatline/thatline.github.io"><img class="w-8" src="./img/GitHub-Mark-Light-120px-plus.png"></a></div></nav></header><section><div class="line"></div><div class="info"><a class="link" target="_blank"><div class="title"></div><div class="artist"></div></a></div></section><footer><button class="next-btn">Next 🔀</button></footer><script>function getRandomInt(max) {
+    return Math.floor(Math.random() * max);
+}
+
+function cleanLine(line) {
+    return "&ldquo;" + line.replaceAll("//", "<br>") + "&rdquo;";
+}
+
+function getNextLine() {
+    return lines[getRandomInt(lines.length)];            
+}
+
+function updateLine() {
+    var entry = getNextLine();
+
+    $(".line").html(cleanLine(entry.line));
+    $(".title").text(entry.song);
+    $(".artist").text("By " + entry.artist);
+    $(".link").attr("href", entry.genius_link);
+}
+
+updateLine();
+
+$(".next-btn").click(function() {
+    updateLine();
+});</script></body></html>
