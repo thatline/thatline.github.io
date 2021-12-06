@@ -46,7 +46,7 @@
     }
 
     .title {
-        @apply font-bold text-lg;
+        @apply font-bold text-xl pb-1;
     }
 
     .artists { 
@@ -56,5 +56,15 @@
     .next-btn {
         @apply rounded-lg bg-white px-8 py-4 font-black text-2xl;
         color: #1B1C1E;
+    }
+}
+
+@layer utilities {
+    img.emoji {
+       height: 1em;
+       width: 1em;
+       margin: 0 .05em 0 .1em;
+       vertical-align: -0.1em;
+       display: inline;
     }
 }

@@ -658,7 +658,8 @@ nav {
 }
 
 .title {
-  font-size: 1.125rem;
+  padding-bottom: 0.25rem;
+  font-size: 1.25rem;
   line-height: 1.75rem;
   font-weight: 700;
 }
@@ -31950,6 +31951,14 @@ nav {
 
 .ease-in-out {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+img.emoji {
+  height: 1em;
+  width: 1em;
+  margin: 0 .05em 0 .1em;
+  vertical-align: -0.1em;
+  display: inline;
 }
 
 @media (min-width: 640px) {

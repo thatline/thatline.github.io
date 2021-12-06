@@ -16,13 +16,12 @@ html(lang="en")
                     a(href="https://github.com/thatline/thatline.github.io")
                         img.w-8(src="./img/GitHub-Mark-Light-120px-plus.png")
         section
+            button.next-btn Next 🔀
             .line
             .info
                 a.link(target="_blank")
                     .title
                     .artist
-        footer
-            button.next-btn Next 🔀
         
         script.
             function getRandomInt(max) {
@@ -51,3 +50,6 @@ html(lang="en")
             $(".next-btn").click(function() {
                 updateLine();
             });
+        script(src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js" crossorigin="anonymous")
+        script.
+            twemoji.parse(document.body);
