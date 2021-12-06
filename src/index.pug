@@ -15,8 +15,8 @@ html(lang="en")
         meta(property="twitter:creator" content="@_Shakeel")
 
         link(href="/dist/tailwind.css" rel="stylesheet")
-        script(src="./scripts/lines.js")
-        script(src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous")
+        //- script(src="./scripts/lines.js")
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
@@ -37,6 +37,14 @@ html(lang="en")
                     .artist
         
         script.
+            var lines = [];
+            var errorLine = {
+                artist: "",
+                line: "error loading data",
+                title: "",
+                genius_link: ""
+            };
+
             function getRandomInt(max) {
                 return Math.floor(Math.random() * max);
             }
@@ -49,19 +57,37 @@ html(lang="en")
                 return lines[getRandomInt(lines.length)];            
             }
 
+            function hasData() {
+                return !(lines.length === 0 || (lines.length === 1 && lines[0].line == errorLine.line));
+            }
+
             function updateLine() {
+                if (!hasData()) {
+                    lines = [errorLine];
+                }
+
                 var entry = getNextLine();
 
                 $(".line").html(cleanLine(entry.line));
                 $(".title").text(entry.song);
+                // TODO: move this "By " to the template out of the code
                 $(".artist").text("By " + entry.artist);
                 $(".link").attr("href", entry.genius_link);
             }
 
-            updateLine();
-
             $(".next-btn").click(function() {
                 updateLine();
+            });
+
+            $(function() {
+                $.getJSON("/data/lines.json", function(data) {
+                    console.log(data);
+                    // TODO: error handling
+                    if (data.length > 0) {
+                        lines = data;
+                    }
+                    updateLine();
+                });
             });
         script(src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js" crossorigin="anonymous")
         script.
