@@ -26,10 +26,8 @@
 }
 
 @layer components {
-    .thatline-logo {
-        @apply font-black;
-        font-size: 1.25rem;
-        letter-spacing: -0.1em;
+    .thatline-logo img {
+        @apply h-5;
     }
 
     .line {

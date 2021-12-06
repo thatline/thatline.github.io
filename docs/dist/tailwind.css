@@ -585,8 +585,6 @@ body {
   --tw-text-opacity: 1;
   color: rgba(255, 255, 255, var(--tw-text-opacity));
   background: #1B1C1E;
-  /* color: white; */
-  /* text-align: center; */
 }
 
 section {
@@ -637,10 +635,8 @@ nav {
   }
 }
 
-.thatline-logo {
-  font-weight: 900;
-  font-size: 1.25rem;
-  letter-spacing: -0.1em;
+.thatline-logo img {
+  height: 1.25rem;
 }
 
 .line {
