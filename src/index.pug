@@ -14,13 +14,11 @@ html(lang="en")
         meta(property="twitter:card" content="summary_large_image")
         meta(property="twitter:creator" content="@_Shakeel")
 
+        link(rel="preconnect" href="https://fonts.googleapis.com")
+        link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
+        link(href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet")
         link(href="/dist/tailwind.css" rel="stylesheet")
-        //- script(src="./scripts/lines.js")
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
-    body
+    body.debug-screens
         header
             nav
                 .thatline-logo
@@ -34,61 +32,10 @@ html(lang="en")
             .info
                 a.link(target="_blank")
                     .title
-                    .artist
-        
-        script.
-            var lines = [];
-            var errorLine = {
-                artist: "",
-                line: "error loading data",
-                title: "",
-                genius_link: ""
-            };
-
-            function getRandomInt(max) {
-                return Math.floor(Math.random() * max);
-            }
-
-            function cleanLine(line) {
-                return "&ldquo;" + line.replaceAll("//", "<br>") + "&rdquo;";
-            }
-
-            function getNextLine() {
-                return lines[getRandomInt(lines.length)];            
-            }
-
-            function hasData() {
-                return !(lines.length === 0 || (lines.length === 1 && lines[0].line == errorLine.line));
-            }
-
-            function updateLine() {
-                if (!hasData()) {
-                    lines = [errorLine];
-                }
-
-                var entry = getNextLine();
-
-                $(".line").html(cleanLine(entry.line));
-                $(".title").text(entry.song);
-                // TODO: move this "By " to the template out of the code
-                $(".artist").text("By " + entry.artist);
-                $(".link").attr("href", entry.genius_link);
-            }
-
-            $(".next-btn").click(function() {
-                updateLine();
-            });
-
-            $(function() {
-                $.getJSON("/data/lines.json", function(data) {
-                    console.log(data);
-                    // TODO: error handling
-                    if (data.length > 0) {
-                        lines = data;
-                    }
-                    updateLine();
-                });
-            });
+                    .artistWrapper
+                        span.by By&nbsp;
+                        span.artist
+        script(src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous")
         script(src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js" crossorigin="anonymous")
-        script.
-            twemoji.parse(document.body);
+        script(src="https://www.unpkg.com/widont@0.3.3/index.js" crossorigin="anonymous")
+        script(src="/scripts/functionality.js")

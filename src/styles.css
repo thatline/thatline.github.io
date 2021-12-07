@@ -4,12 +4,12 @@
 
 @layer base {
     * {
-        font-family: 'Playfair Display', serif;
+        /* font-family: 'Playfair Display', serif; */
+        font-family: serif;
     }
 
     body {
-        @apply p-8 text-center text-white;
-        background: #1B1C1E;
+        @apply p-8 text-center text-white bg-offblack;
     }
 
     section { 
@@ -31,31 +31,31 @@
     }
 
     .line {
-        @apply font-bold mb-4;
-        font-size: 7rem;
-        font-style: italic;
-        line-height: 9.25rem;
+        @apply mt-16 align-middle font-bold italic text-3xl md:text-4xl 2xl:text-5xl;
     }
 
     .info {
-        @apply flex flex-col mt-16;
-    }
-
-    .info :hover {
-        @apply underline;
+        @apply flex flex-col mt-12;
     }
 
     .title {
-        @apply font-bold text-xl pb-1;
+        @apply font-bold pb-1 text-xl;
     }
 
-    .artists { 
+    .title:hover {
+        @apply underline;
+    }
+
+    .artistWrapper {
         @apply opacity-80;
     }
 
     .next-btn {
-        @apply rounded-lg bg-white px-8 py-4 font-black text-2xl;
-        color: #1B1C1E;
+        @apply align-middle px-4 py-2 rounded-lg border border-white text-white text-lg;
+    }
+
+    .next-btn:hover {
+        @apply border-offblack bg-white text-offblack;
     }
 }
 
