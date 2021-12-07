@@ -14,8 +14,10 @@ function cleanLine(line) {
     return "&ldquo;" + line.replaceAll("//", "<br>") + "&rdquo;";
 }
 
-function getNextLine() {
-    return lines[getRandomInt(lines.length)];            
+// For display and permalink purposes, for now start with 0 -> 1, etc.
+// TODO: Ideally, there's a more interesting ID numbering system
+function indexToID(index) {
+    return index++;
 }
 
 function hasData() {
@@ -27,11 +29,12 @@ function updateLine() {
         lines = [errorLine];
     }
 
-    var entry = getNextLine();
+    var index = getRandomInt(lines.length);
+    var ID = indexToID(index);
+    var entry = lines[index];
 
     $(".line").html(cleanLine(entry.line));
     $(".title").text(entry.song);
-    // TODO: move this "By " to the template out of the code
     $(".artist").text(entry.artist);
     $(".link").attr("href", entry.genius_link);
 
