@@ -32,7 +32,7 @@
     {
         "artist": "Lupe Fiasco",
         "song": "The Show Goes On",
-        "line": "I was once that little boy, Terrified of the world, now I’m on a world tour",
+        "line": "I was once that little boy, terrified of the world, now I’m on a world tour",
         "genius_link": "https://genius.com/15947465/Lupe-fiasco-the-show-goes-on/Yeah-yeah-the-world-is-yours-i-was-once-that-little-boy-terrified-of-the-world-now-im-on-a-world-tour"
     },
     {
@@ -52,5 +52,11 @@
         "song": "Clan in Da Front",
         "line": "Throw your shitty drawers in the hamper, next time, come strapped with a fuckin’ Pamper",
         "genius_link": "https://genius.com/118125"
+    },
+    {
+        "artist": "Kanye West",
+        "song": "Diamonds From Sierra Leone (Remix) ft. Jay-Z",
+        "line": "This ain’t no tall order, this is nothin’ to me. Difficult takes a day, impossible takes a week",
+        "genius_link": "https://genius.com/58106"
     }
 ]

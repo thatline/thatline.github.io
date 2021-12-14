@@ -29,6 +29,7 @@ function updateLine() {
         lines = [errorLine];
     }
 
+    // TODO: exhaust all entries before repeating them, possibly in the same order
     var index = getRandomInt(lines.length);
     var ID = indexToID(index);
     var entry = lines[index];
