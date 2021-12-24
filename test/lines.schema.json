@@ -1,0 +1,28 @@
+{
+    "$id": "https://thatline.github.io/test/lines.schema.json",
+    "$schema": "http://json-schema.org/draft-03/schema",
+    "description": "Lines for thatline.github.io",
+    "type": "array",
+    "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+            "artist": {
+                "type": "string",
+                "required": true
+            },
+            "genius_link": {
+                "type": "string",
+                "required": true
+            },
+            "line": {
+                "type": "string",
+                "required": true
+            },
+            "song": {
+                "type": "string",
+                "required": true
+            }
+        }
+    }
+}

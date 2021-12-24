@@ -6,15 +6,19 @@
   "private": "true",
   "scripts": {
     "start": "npm run-script build && npx @11ty/eleventy --serve --input=src --output=docs",
-    "build": "npx @11ty/eleventy --input=src --output=docs && npm run-script postcss",
+    "build:11ty": "npx @11ty/eleventy --input=src --output=docs",
+    "build": "npm run-script build:11ty && npm run-script postcss",
     "postcss": "postcss src/styles.css -o docs/dist/tailwind.css",
-    "postcss:w": "postcss -w src/styles.css -o docs/dist/tailwind.css"
+    "postcss:w": "postcss -w src/styles.css -o docs/dist/tailwind.css",
+    "pretest": "npm run-script build:11ty && jsonlint -q docs/data/lines.json -V test/lines.schema.json",
+    "test": "echo 'test will run here'"
   },
   "devDependencies": {
     "@11ty/eleventy": "^0.12.1",
     "@tailwindcss/forms": "^0.3.3",
     "@tailwindcss/typography": "^0.4.1",
     "autoprefixer": "^10.3.3",
+    "jsonlint": "^1.6.3",
     "jstransformer-markdown-it": "^2.1.0",
     "markdown-it": "^10.0.0",
     "postcss": "^8.3.6",
