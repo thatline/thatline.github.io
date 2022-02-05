@@ -34,6 +34,8 @@ function updateLine() {
     var ID = indexToID(index);
     var entry = lines[index];
 
+    // entry = lines.pop();
+
     $(".line").html(cleanLine(entry.line));
     $(".title").text(entry.song);
     $(".artist").text(entry.artist);
