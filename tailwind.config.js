@@ -20,7 +20,7 @@ module.exports = {
     extend: {
       // fontFamily: {
       //   sans: ['proxima-nova', ...defaultTheme.fontFamily.sans],
-        serif: ['playfair-display', ...defaultTheme.fontFamily.serif],
+        serif: ['montserrat', ...defaultTheme.fontFamily.serif],
       // },
       fontSize: {
         '3xl': ['3rem', '3.45rem'],
@@ -29,8 +29,9 @@ module.exports = {
       }
     },
     colors: {
-      offblack: '#1B1C1E',
+      black: '#000000',
       white: '#ffffff'
+      // TODO: blue; tan
     },
   },
   variants: {
