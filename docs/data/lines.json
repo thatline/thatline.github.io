@@ -42,7 +42,7 @@
         "genius_link": "https://genius.com/Consequence-grammy-family-lyrics"
     },
     {
-        "artist": "Jay Z",
+        "artist": "Jay-Z",
         "song": "U Don’t Know",
         "line": "Put me anywhere on God’s green earth,  I’ll triple my worth",
         "genius_link": "https://genius.com/381141"
@@ -112,5 +112,11 @@
         "song": "Champions ft. Kanye West, Big Sean, 2 Chainz, Travis Scott, Yo Gotti, Quavo & Desiigner",
         "line": "I love my Auntie Jane, but fuck Uncle Sam. I’m a walkin’ money machine, check my Instagram",
         "genius_link": "https://genius.com/9270796"
+    },
+    {
+        "artist": "Jay-Z",
+        "song": "Nickles and Dimes",
+        "line": "Hublot homie, two door homie. You don’t know all the shit I do for the homies",
+        "genius_link": "https://genius.com/1940237"
     }
 ]
