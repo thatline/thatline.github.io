@@ -121,7 +121,7 @@
     },
     {
         "artist": "DJ Khaled",
-        "song": "I’m On One",
+        "song": "I’m On One ft. Drake, Rick Ross & Lil Wayne",
         "line": "I’m a made n****, I should dust something. You n****s on the bench, like the bus coming",
         "genius_link": "https://genius.com/22428351"
     },
@@ -130,5 +130,11 @@
         "song": "Nothing On We",
         "line": "Beamer, Benz, or Bentley, like Ford I got focus",
         "genius_link": "https://genius.com/185753"
+    },
+    {
+        "artist": "Talib Kweli",
+        "song": "Push Thru ft. Glen Reynolds, Kendrick Lamar & Curren$y",
+        "line": "Too many daps you might receive from the things you achieve, relax. That’s what my mental say, but my physical’s been detached",
+        "genius_link": "https://genius.com/Talib-kweli-push-thru-lyrics"
     }
 ]
