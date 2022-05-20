@@ -25,4 +25,6 @@ describe("JSON validation", function() {
         }
         assert.equal(dataFile.length, urls.size);
     });
+
+    // TODO: add test for smart quotes (aka check for primes and double primes)
 });
