@@ -6,8 +6,8 @@ const v = new Validator();
 
 const dataFile = JSON.parse(fs.readFileSync(path.normalize("docs/data/lines.json"), "utf8"));
 
-describe("JSON validation", function() {
-    it("lines.json matches schema", function() {
+describe("JSON validation: lines.json", function() {
+    it("matches schema", function() {
         const linesSchema = JSON.parse(fs.readFileSync(path.normalize("test/lines.schema.json"), "utf8"));
         
         const res = v.validate(dataFile, linesSchema);
@@ -16,15 +16,21 @@ describe("JSON validation", function() {
         }
         assert.ok(res.valid);
     });
-    it("lines.json each entry has a unique URL", function() {
+
+    it("each entry has a unique URL", function() {
         let urls = new Set();
-        for (let line of dataFile) {
+        for (let entry of dataFile) {
             // Ensure there is a url. If not, dump the entry
-            assert.ok(line.hasOwnProperty("genius_link"), JSON.stringify(line));
-            urls.add(line.genius_link);
+            assert.ok(entry.hasOwnProperty("genius_link"), JSON.stringify(entry));
+            urls.add(entry.genius_link);
         }
         assert.equal(dataFile.length, urls.size);
     });
 
-    // TODO: add test for smart quotes (aka check for primes and double primes)
+    
+    it("doesn’t contain dumb quotes", function() {
+        for (let entry of dataFile) {
+            assert.ok(!entry.line.match(/\'|\"/g), `Found dumb quotes in: ${entry.line}`);
+        }
+    });
 });
